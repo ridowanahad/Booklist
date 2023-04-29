@@ -1,42 +1,43 @@
-import React, { Component } from 'react';
-import Table from './Table';
-import Form from './Form';
+import React, { Component } from "react";
+import Table from "./Table";
+import Form from "./Form";
 
 class App extends Component {
-    state = {
-        characters: []
-    };
+  state = {
+    characters: [],
+  };
 
-    removeCharacter = index => {
-        const { characters } = this.state;
-    
-        this.setState({
-            characters: characters.filter((character, i) => { 
-                return i !== index;
-            })
-        });
-    }
+  removeCharacter = (index) => {
+    const { characters } = this.state;
 
-    handleSubmit = character => {
-        this.setState({characters: [...this.state.characters, character]});
-    }
+    this.setState({
+      characters: characters.filter((character, i) => {
+        return i !== index;
+      }),
+    });
+  };
 
-    render() {
-        const { characters } = this.state;
-        
-        return (
-            <div className="container">
-                <h1>Book List</h1>
-                <p>Simple Add and Delete page.</p>
-                <Table
-                    characterData={characters}
-                    removeCharacter={this.removeCharacter}
-                />
-                <h3>Add A New Book Information</h3>
-                <Form handleSubmit={this.handleSubmit} />
-            </div>
-        );
-    }
+  handleSubmit = (character) => {
+    this.setState({ characters: [...this.state.characters, character] });
+  };
+
+  render() {
+    const { characters } = this.state;
+
+    return (
+      <div className="container">
+        <h3>Add A New Book Information</h3>
+        <Form handleSubmit={this.handleSubmit} />
+        <p>Simple Add and Delete page.</p>
+
+        <h1>Book List</h1>
+        <Table
+          characterData={characters}
+          removeCharacter={this.removeCharacter}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
