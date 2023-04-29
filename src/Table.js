@@ -9,6 +9,7 @@ const TableHeader = () => {
         <th>Publisher Age</th>
         <th>Page Number</th>
         <th>Publish Date</th>
+        <th>Edit</th>
         <th>Remove</th>
       </tr>
     </thead>
@@ -24,6 +25,9 @@ const TableBody = (props) => {
         <td>{row.publisherAge}</td>
         <td>{row.pageNumber}</td>
         <td>{row.publishDate}</td>
+        <td>
+          <button onClick={() => props.editCharacter('')}>Edit</button>
+        </td>
         <td>
           <button onClick={() => props.removeCharacter(index)}>Delete</button>
         </td>
