@@ -26,7 +26,7 @@ const TableBody = (props) => {
         <td>{row.pageNumber}</td>
         <td>{row.publishDate}</td>
         <td>
-          <button onClick={() => props.editCharacter('')}>Edit</button>
+          <button>Edit</button>
         </td>
         <td>
           <button onClick={() => props.removeCharacter(index)}>Delete</button>
