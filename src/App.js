@@ -1,43 +1,98 @@
-import React, { Component } from "react";
-import Table from "./Table";
-import Form from "./Form";
+import React, { useState } from "react";
 
-class App extends Component {
-  state = {
+import TableData from "./Table";
+const App = () => {
+  const [getCharacter, setCharacter] = useState({
     characters: [],
+  });
+  const [initalState, setInitialState] = useState({
+    name: "",
+    publisherName: "",
+    publisherAge: "",
+    pageNumber: "",
+    publishDate: "",
+  });
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setInitialState({
+      ...initalState,
+      [name]: value,
+    });
   };
 
-  removeCharacter = (index) => {
-    const { characters } = this.state;
-
-    this.setState({
-      characters: characters.filter((character, i) => {
+  const removeData = (index) => {
+    setCharacter({
+      characters: getCharacter.characters.filter((character, i) => {
         return i !== index;
       }),
     });
   };
 
-  handleSubmit = (character) => {
-    this.setState({ characters: [...this.state.characters, character] });
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+    setCharacter({ characters: [...getCharacter.characters, initalState] });
+    setInitialState({
+      name: "",
+      publisherName: "",
+      publisherAge: "",
+      pageNumber: "",
+      publishDate: "",
+    });
   };
-
-  render() {
-    const { characters } = this.state;
-
-    return (
-      <div className="container">
-        <h3>Add A New Book Information</h3>
-        <Form handleSubmit={this.handleSubmit} />
-        <p>Simple Add and Delete page.</p>
-
-        <h1>Book List</h1>
-        <Table
-          characterData={characters}
-          removeCharacter={this.removeCharacter}
+  return (
+    <div className="container">
+      <h3>Add A New Book Information</h3>
+      <p>Simple Add and Delete page.</p>
+      <form onSubmit={onFormSubmit}>
+        <label htmlFor="name">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          value={initalState.name}
+          onChange={handleChange}
         />
-      </div>
-    );
-  }
-}
+        <label htmlFor="publisherName">Publisher Name</label>
+        <input
+          type="text"
+          name="publisherName"
+          id="publisherName"
+          value={initalState.publisherName}
+          onChange={handleChange}
+        />
+        <label htmlFor="publisherAge">Publisher Age</label>
+        <input
+          type="number"
+          name="publisherAge"
+          id="publisherAge"
+          value={initalState.publisherAge}
+          onChange={handleChange}
+        />
+        <label htmlFor="pageNumber">Page Number</label>
+        <input
+          type="number"
+          name="pageNumber"
+          id="pageNumber"
+          value={initalState.pageNumber}
+          onChange={handleChange}
+        />
+        <label htmlFor="publishDate">Publish Date</label>
+        <input
+          type="date"
+          name="publishDate"
+          id="publishDate"
+          value={initalState.publishDate}
+          onChange={handleChange}
+        />
+        <button type="submit">Submit</button>
+      </form>
+
+      <TableData
+        removeData={removeData}
+        getCharacter={getCharacter?.characters}
+      />
+    </div>
+  );
+};
 
 export default App;
