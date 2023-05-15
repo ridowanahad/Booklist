@@ -7,45 +7,6 @@ body {
   margin: 0;
 }
 
-[hidden],
-template {
-  display: none;
-}
-
-a:active,
-a:hover {
-  outline: 0;
-}
-
-b,
-strong {
-  font-weight: bold;
-}
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-img {
-  border: 0;
-}
-
-svg:not(:root) {
-  overflow: hidden;
-}
-
 hr {
   box-sizing: content-box;
   height: 0;
@@ -104,14 +65,6 @@ hr {
   height: 0;
   border: 0;
   border-top: 1px solid #dedede;
-}
-
-dt {
-  font-weight: 600;
-}
-
-dd {
-  margin-bottom: 0.5rem;
 }
 
 .full-container {
@@ -178,81 +131,6 @@ dd {
   display: inline;
 }
 
-.vertical-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.responsive-image {
-  max-width: 100%;
-  height: auto;
-}
-
-.show {
-  display: block !important;
-}
-
-.hide {
-  display: none !important;
-}
-
-.invisible {
-  visibility: hidden;
-}
-
-.float-left {
-  float: left;
-}
-
-.float-right {
-  float: right;
-}
-
-.no-padding-top {
-  padding-top: 0;
-}
-
-.no-padding-bottom {
-  padding-bottom: 0;
-}
-
-.padding-top {
-  padding-top: 2rem;
-}
-
-.padding-bottom {
-  padding-bottom: 2rem;
-}
-
-.no-margin-top {
-  margin-top: 0;
-}
-
-.no-margin-bottom {
-  margin-bottom: 0;
-}
-
-.margin-top {
-  margin-top: 2rem;
-}
-
-.margin-bottom {
-  margin-bottom: 2rem;
-}
-
-.alternate-background {
-  background: #fafafa;
-  color: #404040;
-}
-
-.screen-reader-text {
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-}
 
 /* Buttons
   =============== */
@@ -473,23 +351,6 @@ fieldset {
 legend {
   padding: 0 0.5rem;
   font-weight: 600;
-}
-
-select {
-  color: #404040;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAJCAYAAAA/33wPAAAAvklEQVQoFY2QMQqEMBBFv7ERa/EMXkGw11K8QbDXzuN4BHv7QO6ifUgj7v4UAdlVM8Uwf+b9YZJISnlqrfEUZVlinucnBGKaJgghbiHOyLyFKIoCbdvecpyReYvo/Ma2bajrGtbaC58kCdZ1RZ7nl/4/4d5EsO/7nzl7IUtodBexMMagaRrs+06JLMvcNWmaOv2W/C/TMAyD58dxROgSmvxFFMdxoOs6lliWBXEcuzokXRbRoJRyvqqqQvye+QDMDz1D6yuj9wAAAABJRU5ErkJggg==)
-    right center no-repeat;
-  line-height: 1;
-}
-
-select::-ms-expand {
-  display: none;
-}
-
-[type="range"] {
-  width: 100%;
 }
 
 label {
